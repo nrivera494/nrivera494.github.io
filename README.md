@@ -88,6 +88,29 @@ If you have bugfixes and enhancements that you would like to submit as a pull re
 
 Unfortunately, one logistical issue with a template theme like Academic Pages that makes it a little tricky to get bug fixes and updates to the core theme. If you use this template and customize it, you will probably get merge conflicts if you attempt to synchronize, although [rebasing](https://git-scm.com/docs/git-rebase) the changes from this template will work along with manually [cherry picking](https://git-scm.com/docs/git-cherry-pick) the relevant commits. If you are not comfortable with the Git command line, you can save your various `.yml` configuration files and Markdown files, delete the repository, and fork it again. 
 
+## Switching to a different Jekyll theme
+
+It is feasible to migrate this site to a different Jekyll theme, but the amount of work depends on how different the new theme is from Academic Pages.
+
+- **Low effort (usually 1-2 hours):** Stay on this theme and customize colors, fonts, navigation, and page layouts.
+- **Medium effort (usually 0.5-2 days):** Switch to another Minimal Mistakes-based theme with similar front matter and collection patterns.
+- **Higher effort (usually 2-5+ days):** Move to a very different theme/template and remap layout names, includes, collections, and styling.
+
+Recommended migration approach:
+
+1. Create a branch and snapshot current behavior.
+2. Pick a target theme that is actively maintained and GitHub Pages-compatible.
+3. Update `Gemfile` and `_config.yml` to use the new theme/plugin set.
+4. Map existing pages and collections (`_pages`, `_publications`, `_talks`, `_teaching`) to the target theme's expected layout/front matter.
+5. Migrate navigation and sidebar/profile rendering.
+6. Re-test locally with `bundle exec jekyll build` and then deploy.
+
+Practical caution:
+
+- Many third-party themes require plugins not allowed by GitHub Pages. If that happens, either:
+  - build with GitHub Actions and publish the generated static site, or
+  - choose a theme that works within GitHub Pages' allowed plugin constraints.
+
 ---
 <div align="center">
     

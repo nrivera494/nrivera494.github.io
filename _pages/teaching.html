@@ -5,8 +5,31 @@ permalink: /teaching/
 author_profile: true
 ---
 
-{% include base_path %}
+{% capture teaching_content %}
+On this page you'll find materials for courses that I have taught at Cornell.
 
-{% for post in site.teaching reversed %}
-  {% include archive-single.html %}
-{% endfor %}
+---
+
+### AEP 4400/5400 Nonlinear and Quantum Optics
+
+A course offered to upper-level undergraduates and graduate students presenting a unified classical and quantum treatment of nonlinear optics. Topics covered include the nonlinear susceptibility and its formal properties, second- and third-order classical nonlinear optics, quantization of the electromagnetic field in nonlinear media, quantum states of light, sub-shot-noise interferometry, and the quantum theory of parametric amplifiers, parametric oscillators, and squeezing via the Kerr effect.
+
+- Nonlinear response
+- Effects arising from second-order nonlinearity
+- Effects arising from third-order nonlinearity
+- Quantum states of light
+- Quantum nonlinear optics
+- Combined notes
+
+### AEP 4230/5230 Statistical Physics
+
+An upper-level undergraduate course on statistical physics, covering thermodynamics, probability, classical and quantum statistical mechanics, interacting systems, and Langevin dynamics. In 2025 we used Kardar's *Statistical Physics of Particles* as the text for most of the course. You can find typed lecture notes for the first ~60% of the course here, with typed notes for the rest forthcoming.
+
+- Thermodynamics
+- Probability
+- Classical Statistical Mechanics
+- Interacting Systems
+- Combined Notes
+{% endcapture %}
+
+{{ teaching_content | markdownify }}
