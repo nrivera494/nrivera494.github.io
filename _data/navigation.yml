@@ -20,3 +20,8 @@ main:
   - title: "Members"
     url: /members/
 
+  - title: "Teaching"
+    url: /teaching/
+
+  - title: "Publications"
+    url: /publications/
